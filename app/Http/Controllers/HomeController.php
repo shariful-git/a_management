@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Article::with('user')->orderBy('id', 'DESC')->get();
+        $articles = Article::with('user')->latest()->paginate(5)->withQueryString();
         return view('home', compact('articles'))->with('info','Welcome!');
     }
 

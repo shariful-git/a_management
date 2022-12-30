@@ -183,11 +183,12 @@
                                                                 </div>
                                                                 <div class="card-body">
                                                                     <span style="white-space: pre-line"
-                                                                        class="card-text">{{ $article->post }}</span>
+                                                                        class="card-text">{!! $article->post !!}</span>
                                                                 </div>
                                                             </div>
                                                         @endforeach
                                                     </div>
+                                                    <div class="d-flex justify-content-center mt-2">{{$articles->links('pagination::bootstrap-4')}}</div>
                                                 </div>
 
                                                 <div class="tab-pane" id="account">

@@ -47,6 +47,8 @@ class ArticleController extends Controller
         try {
             $validated['user_id'] = Auth::user()->id;
             $validated['status'] = 1;
+            $validated['post'] = $request->post;
+            $validated['post_bk'] = base64_encode($request->post);
             Article::create($validated);
             return redirect('/home');
         } catch (\Throwable $th) {
